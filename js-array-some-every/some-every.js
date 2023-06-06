@@ -51,13 +51,9 @@ Examples:
 */
 
 function hasNoDuplicates(arr) {
-    let newArray = []
-    for(let char of arr){
-        newArray = arr.splice(arr.indexOf(char),1);
-        return newArray.some(function(value){
-            return char === value;
-        })
-    }
+    return arr.every(function(value){
+        return arr.indexOf(value) === arr.lastIndexOf(value);
+    })
 }
 
 /*
